@@ -2,11 +2,11 @@ const app= require("./app");
 const dotenv= require("dotenv");
 const connectDatabase= require("./config/database");
 const cloudinary= require("cloudinary");
-// const cors= require("cors");
+const cors= require("cors");
 
-// app.use(cors({
-//     origin:"*"
-// }));
+app.use(cors({
+    origin:"*"
+}));
 
 //Handling uncaught exceptions
 process.on("uncaughtException",(err) =>{

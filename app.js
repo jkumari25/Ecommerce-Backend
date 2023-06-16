@@ -27,11 +27,11 @@ app.use("/api/v1",user);
 app.use("/api/v1",order);
 app.use("/api/v1",payment);
 
-app.use(express.static(path.join(__dirname,"../Frontend/ecommerce-app/build")));
+// app.use(express.static(path.join(__dirname,"../Frontend/ecommerce-app/build")));
 
-app.get("*", (req,res) =>{
-    res.sendFile(path.resolve(__dirname,"../Frontend/ecommerce-app/build/index.html"));
-})
+// app.get("*", (req,res) =>{
+//     res.sendFile(path.resolve(__dirname,"../Frontend/ecommerce-app/build/index.html"));
+// })
 
 //Middleware for errors
 app.use(errorMiddleware);
