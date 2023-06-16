@@ -2,11 +2,7 @@ const app= require("./app");
 const dotenv= require("dotenv");
 const connectDatabase= require("./config/database");
 const cloudinary= require("cloudinary");
-const cors= require("cors");
 
-app.use(cors({
-    origin:"*"
-}));
 
 //Handling uncaught exceptions
 process.on("uncaughtException",(err) =>{
@@ -17,7 +13,7 @@ process.on("uncaughtException",(err) =>{
 
 
 // Config
-dotenv.config({path:"Backend/config/config.env"});
+dotenv.config({path:"./config/config.env"});
 
 //Connecting to database
 connectDatabase();
@@ -30,7 +26,7 @@ cloudinary.config({
 
 
 const server= app.listen(process.env.PORT,()=> {
-    console.log(`Server is working on http://localhost:${process.env.PORT}`)
+    console.log(`Server is working on PORT:${process.env.PORT}`)
 })
 
 // Unhandled Promise Rejection

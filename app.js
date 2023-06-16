@@ -6,6 +6,13 @@ const bodyParser= require('body-parser');
 const fileupload= require("express-fileupload");
 const dotenv= require("dotenv");
 const path= require("path");
+const cors= require("cors");
+
+app.use(cors({
+    credentials:true,
+    origin:process.env.FRONTEND_URL,
+    methods:["GET","POST","PUT","DELETE"],
+}));
 
 app.use(express.json());
 
